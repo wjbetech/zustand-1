@@ -1,0 +1,24 @@
+.task {
+    background-color: var(--grey-medium);
+    border-radius: 4px;
+    min-height: 5rem;
+    padding: 0.5rem;
+    margin: 5px 0 5px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bottom-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.status {
+    font-size: small;
+    background: var(--green-dark);
+    color: var(--text-light);
+    padding: 0.5rem;
+    border-radius: 10px;
+}
