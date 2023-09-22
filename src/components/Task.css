@@ -9,12 +9,21 @@
     flex-direction: column;
     justify-content: space-between;
     box-shadow: var(--shadow);
-    cursor: pointer;
+    cursor: move;
 }
 
 .bottom-wrapper {
     display: flex;
     justify-content: space-between;
+}
+
+.bottom-wrapper .delete-button {
+    background-color: var(--red-dark);
+    justify-content: center;
+    text-align: center;
+    padding: 8px 15px 5px 15px;
+    border-radius: 8px;
+    color: white;
 }
 
 .status {

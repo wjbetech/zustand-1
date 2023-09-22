@@ -3,11 +3,13 @@ import Task from "./Task"
 import { shallow } from "zustand/shallow"
 import { useStore } from "../store"
 import { useState } from "react"
+import classNames from "classnames"
 
 export default function Column({ state }) {
 
     const [text, setText] = useState("")
     const [open, setOpen] = useState(false)
+    const [drop, setDrop] = useState(false)
 
     const tasks = useStore(
         (store) => store.tasks.filter((task) => task.state === state),
@@ -16,13 +18,35 @@ export default function Column({ state }) {
 
     const addTask = useStore((store) => store.addTask);
 
+    const setDraggedTask = useStore((store) => store.setDraggedTask)
+    const draggedTask = useStore((store) => store.draggedTask)
+    const moveTask = useStore((store) => store.moveTask)
+
     return (
-        <div className="column">
+        <div 
+            className={classNames("column", { drop: drop })} 
+            onDragOver={(event) => {
+                setDrop(true);
+                event.preventDefault()
+            }}
+            onDragLeave={(event) => {
+                setDrop(false);
+                event.preventDefault();
+            }}
+            onDrop={() => {
+                setDrop(false);
+                moveTask(draggedTask, state);
+                setDraggedTask(null);
+            }}
+        >
             <div className="title-wrapper">
                 <p>{state}</p>
                 <button onClick={() => setOpen(true)}>Add Task</button>
             </div>
+            
+            {/* render tasks */}
             {tasks.map((task) => <Task title={task.title} key={task.title} />)}
+
             {open && 
             <div className="modal">
                 <div className="modal-content">

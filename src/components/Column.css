@@ -8,6 +8,11 @@
     margin: 1rem;
     border-radius: 8px;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.35);
+    border: 7px solid transparent
+}
+
+.drop {
+    border: 7px solid rgb(7, 214, 0);
 }
 
 .title-wrapper {
@@ -43,6 +48,7 @@
     padding: 10px;
     border-radius: 6px;
     box-sizing: var(--shadow);
+    z-index: 2;
 
     & .modal-input {
         justify-content: center;
@@ -62,6 +68,8 @@
         justify-content: space-evenly;
         padding: 5px 0;
         gap: 10px;
+        z-index: 5;
+        cursor: pointer;
     }
 
     & .modal-button {
