@@ -1,13 +1,15 @@
 .task {
-    background-color: var(--grey-medium);
+    border: 2px solid grey;
     border-radius: 4px;
     min-height: 5rem;
     padding: 0.5rem;
-    margin: 5px 0 5px 0;
+    margin: 5px 0 10px 0;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-shadow: var(--shadow);
+    cursor: pointer;
 }
 
 .bottom-wrapper {
@@ -21,4 +23,16 @@
     color: var(--text-light);
     padding: 0.5rem;
     border-radius: 10px;
+}
+
+.PLANNED {
+    background: var(--red-dark)
+}
+
+.ONGOING {
+    background: var(--blue-dark)
+}
+
+.DONE {
+    background: var(--green-dark)
 }

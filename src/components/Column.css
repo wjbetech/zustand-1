@@ -9,3 +9,77 @@
     border-radius: 8px;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.35);
 }
+
+.title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    align-items: center;
+
+    & button {
+        border-radius: 6px;
+        border: none;
+        padding: 5px 10px;
+        background-color: var(--blue-light);
+        color: var(--text-light);
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+
+    & button:hover {
+        background-color: var(--blue-dark);
+    }
+}
+
+.modal {
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.75);
+    bottom: calc(100vh / 2);
+    left: calc(100vw / 3);
+    align-items: center;
+    padding: 10px;
+    border-radius: 6px;
+    box-sizing: var(--shadow);
+
+    & .modal-input {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: auto;
+        padding: 5px;
+        font-size: 16px;
+    }
+
+    & .modal-input:focus {
+        outline: none;
+    }
+
+    & .modal-buttons {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 5px 0;
+        gap: 10px;
+    }
+
+    & .modal-button {
+        width: 45%;
+        padding: 5px;
+        color: var(--text-light);
+        margin-top: 5px;
+        border: none;
+        border-radius: 6px;
+        box-shadow: var(--shadow);
+        cursor: pointer;
+    }
+
+    & .open {
+        background-color: var(--green-dark);
+    }
+
+    & .close {
+        background-color: var(--red-dark);
+    }
+}

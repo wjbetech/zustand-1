@@ -4,7 +4,7 @@
   --text-light: #f8fcfb;
   --text-dark: #233142;
 
-  --grey--light: #E0E0E0;
+  --grey-light: #E0E0E0;
   --grey-medium: #A8A8A8;
   --grey-dark: #585858;
   --grey-v-dark: #282828;
@@ -29,4 +29,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
 }
